@@ -1,18 +1,19 @@
 {
-  "name": "tram-lite-roller",
-  "version": "1.0.0",
-  "private": true,
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "parcel src/index.html"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "open-props": "^1.5.3",
-    "parcel": "^2.8.2",
-    "tram-lite": "^0.1.0"
-  }
+	"name": "tram-lite-roller",
+	"version": "1.0.0",
+	"private": true,
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"prestart": "rm -rf .parcel-cache; rm -rf dist",
+		"start": "parcel src/index.html"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"open-props": "^1.5.3",
+		"parcel": "^2.8.2",
+		"tram-lite": "^0.2.0"
+	}
 }
