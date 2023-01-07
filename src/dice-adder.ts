@@ -9,6 +9,17 @@ export const diceAdder = (props: diceRollerContext) => {
 		props.idcounter = props.idcounter + 1;
 	};
 
+	const onRoll = () => {
+		const newDieRolls = props.dice.map((die) => {
+			return { ...die, roll: Math.floor(Math.random() * die.max) + die.min };
+		});
+		props.dice = newDieRolls;
+	};
+
+	const onReset = () => {
+		props.dice = [];
+	};
+
 	return html`
 		<section use:dice use:idcounter>
 			<button onclick=${onAddDice(4, 1, 4)}>+ d4</button>
@@ -17,6 +28,9 @@ export const diceAdder = (props: diceRollerContext) => {
 			<button onclick=${onAddDice(10, 0, 9)}>+ d10</button>
 			<button onclick=${onAddDice(12, 1, 12)}>+ d12</button>
 			<button onclick=${onAddDice(20, 1, 20)}>+ d20</button>
+			<br />
+			<button onclick=${onRoll}>Roll</button>
+			<button onclick=${onReset}>Reset</button>
 		</section>
 	`;
 };
